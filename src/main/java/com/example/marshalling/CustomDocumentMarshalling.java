@@ -12,11 +12,13 @@ public class CustomDocumentMarshalling extends DocumentMarshallingStrategy {
 
     @Override
     public byte[] marshal(Context context, ObjectOutputStream objectOutputStream, Object o) throws IOException {
-        throw new RuntimeException("Custom Marshalling Works!!!!!!!!!!!!!!!!!!!!!!!!!!");
+        System.out.println("Custom Marshalling Works!!!!");
+        return super.marshal(context, objectOutputStream, o);
     }
 
     @Override
     public Object unmarshal(Context context, ObjectInputStream objectInputStream, byte[] object, ClassLoader classLoader) throws IOException, ClassNotFoundException {
-        throw new RuntimeException("Custom UnMarshalling Works!!!!!!!!!!!!!!!!!!!!!!!!!!");
+        System.out.println("Custom Unmarshalling Works!!!!");
+        return super.unmarshal(context, objectInputStream, object, classLoader);
     }
 }
